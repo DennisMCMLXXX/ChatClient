@@ -21,14 +21,8 @@ public class ChatUI {
 
 			@Override
 			public void run() {
-				frame = new JFrame(title);
-				frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-
-				chatText = new JTextArea();
-				chatText.setEditable(false);
-				scrollPane = new JScrollPane(chatText);
-				entryText = new JTextField();
-				JButton aboutButton = new JButton("About");
+				
+				frameSettings(title);
 
 				entryText.addActionListener(new ActionListener() {
 
@@ -39,13 +33,8 @@ public class ChatUI {
 
 				});
 
-				frame.add(entryText, BorderLayout.NORTH);
-				frame.add(scrollPane, BorderLayout.CENTER);
-				frame.add(aboutButton, BorderLayout.SOUTH);
-
-				frame.setBounds(20, 20, 600, 400);
-				frame.setVisible(true);
 			}
+
 		});
 
 	}
@@ -74,5 +63,23 @@ public class ChatUI {
 			e.printStackTrace();
 			chatText.append("Other party hung up :(");
 		}
+	}
+
+	private void frameSettings(String title) {
+		frame = new JFrame(title);
+		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+
+		chatText = new JTextArea();
+		chatText.setEditable(false);
+		scrollPane = new JScrollPane(chatText);
+		entryText = new JTextField();
+		JButton aboutButton = new JButton("About");
+
+		frame.add(entryText, BorderLayout.NORTH);
+		frame.add(scrollPane, BorderLayout.CENTER);
+		frame.add(aboutButton, BorderLayout.SOUTH);
+
+		frame.setBounds(20, 20, 600, 400);
+		frame.setVisible(true);
 	}
 }
