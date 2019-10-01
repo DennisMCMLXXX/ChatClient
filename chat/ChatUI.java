@@ -6,11 +6,7 @@ import java.awt.event.ActionListener;
 import java.io.IOException;
 import java.io.Writer;
 
-import javax.swing.JFrame;
-import javax.swing.JScrollPane;
-import javax.swing.JTextArea;
-import javax.swing.JTextField;
-import javax.swing.SwingUtilities;
+import javax.swing.*;
 
 public class ChatUI {
 
@@ -31,8 +27,8 @@ public class ChatUI {
 				chatText = new JTextArea();
 				chatText.setEditable(false);
 				scrollPane = new JScrollPane(chatText);
-				frame.add(scrollPane, BorderLayout.CENTER);
 				entryText = new JTextField();
+                JButton aboutButton = new JButton("About");
 
 				entryText.addActionListener(new ActionListener() {
 
@@ -53,9 +49,11 @@ public class ChatUI {
 
 				});
 
-				frame.add(entryText, BorderLayout.SOUTH);
+                frame.add(entryText, BorderLayout.NORTH);
+                frame.add(scrollPane, BorderLayout.CENTER);
+				frame.add(aboutButton, BorderLayout.SOUTH);
 
-				frame.setBounds(20, 20, 300, 300);
+				frame.setBounds(20, 20, 600, 400);
 				frame.setVisible(true);
 			}
 		});
