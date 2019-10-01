@@ -1,6 +1,6 @@
 package chat;
 
-import java.awt.BorderLayout;
+import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.IOException;
@@ -42,7 +42,8 @@ public class ChatUI {
 						try {
 							output.write(line + "\n");
 							output.flush();
-							chatText.append("Me: " + line + "\n");
+							chatText.append("ME:  " + line + "\n");
+							chatText.setFont(new Font("Dialog", Font.BOLD,12));
 							entryText.setText("");
 						} catch (IOException e) {
 							e.printStackTrace();
@@ -66,7 +67,8 @@ public class ChatUI {
 
 			@Override
 			public void run() {
-				chatText.append("They: " + message +"\n");
+				chatText.setFont(new Font("Dialog", Font.BOLD, 12));
+				chatText.append("THEY  :  " + message +"\n");
 			}
 
 	});
