@@ -28,29 +28,19 @@ public class ChatUI {
 				chatText.setEditable(false);
 				scrollPane = new JScrollPane(chatText);
 				entryText = new JTextField();
-                JButton aboutButton = new JButton("About");
+				JButton aboutButton = new JButton("About");
 
 				entryText.addActionListener(new ActionListener() {
 
 					@Override
 					public void actionPerformed(ActionEvent ae) {
-						String line = entryText.getText();
-						try {
-							output.write(line + "\n");
-							output.flush();
-							chatText.append("ME:  " + line + "\n");
-							chatText.setFont(new Font("Dialog", Font.BOLD,12));
-							entryText.setText("");
-						} catch (IOException e) {
-							e.printStackTrace();
-							chatText.append("Other party hung up :(");
-						}
+						printLineMethod(output);
 					}
 
 				});
 
-                frame.add(entryText, BorderLayout.NORTH);
-                frame.add(scrollPane, BorderLayout.CENTER);
+				frame.add(entryText, BorderLayout.NORTH);
+				frame.add(scrollPane, BorderLayout.CENTER);
 				frame.add(aboutButton, BorderLayout.SOUTH);
 
 				frame.setBounds(20, 20, 600, 400);
@@ -66,9 +56,23 @@ public class ChatUI {
 			@Override
 			public void run() {
 				chatText.setFont(new Font("Dialog", Font.BOLD, 12));
-				chatText.append("THEY  :  " + message +"\n");
+				chatText.append("THEY  :  " + message + "\n");
 			}
 
-	});
+		});
+	}
+
+	private void printLineMethod(Writer output) {
+		String line = entryText.getText();
+		try {
+			output.write(line + "\n");
+			output.flush();
+			chatText.append("ME:  " + line + "\n");
+			chatText.setFont(new Font("Dialog", Font.BOLD, 12));
+			entryText.setText("");
+		} catch (IOException e) {
+			e.printStackTrace();
+			chatText.append("Other party hung up :(");
+		}
 	}
 }
