@@ -36,7 +36,7 @@ public class ChatUI {
 				aboutButton.addActionListener(new ActionListener() {
 					@Override
 					public void actionPerformed(ActionEvent e) {
-						 appendText(about.aboutButtonPressed());
+						 appendTextCLEAN(about.aboutButtonPressed());
 						// about.aboutButtonPressed();
 						// printLineMethod(about.aboutButtonPressed); //Denna måste ha en writer!
 					}
@@ -55,6 +55,17 @@ public class ChatUI {
 			public void run() {
 				chatText.setFont(new Font("Dialog", Font.BOLD, 12));
 				chatText.append("THEY  :  " + message + "\n");
+			}
+
+		});
+	}
+	public void appendTextCLEAN(String message) {
+		SwingUtilities.invokeLater(new Runnable() {
+
+			@Override
+			public void run() {
+				chatText.setFont(new Font("Dialog", Font.BOLD, 12));
+				chatText.append(message + "\n");
 			}
 
 		});

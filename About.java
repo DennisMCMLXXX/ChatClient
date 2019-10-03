@@ -25,7 +25,7 @@ public class About {
 
 		try {
 			about = mapper.readValue(new File("src/Authors.json"), About.class);
-			System.out.println(about.getMadeBy());
+		//	System.out.println(about.getMadeBy());
 			
 		
 		} catch (JsonMappingException e) {
