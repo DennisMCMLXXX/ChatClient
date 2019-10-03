@@ -21,7 +21,7 @@ public class ChatUI {
 
 			@Override
 			public void run() {
-				
+
 				frameSettings(title);
 
 				entryText.addActionListener(new ActionListener() {
@@ -31,6 +31,13 @@ public class ChatUI {
 						printLineMethod(output);
 					}
 
+				});
+
+				aboutButton.addActionListener(new ActionListener() {
+					@Override
+					public void actionPerformed(ActionEvent e) {
+						About.aboutButtonPressed();
+					}
 				});
 
 			}
@@ -65,8 +72,6 @@ public class ChatUI {
 		}
 	}
 
-
-
 	private void frameSettings(String title) {
 		frame = new JFrame(title);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -80,13 +85,6 @@ public class ChatUI {
 		frame.add(entryText, BorderLayout.NORTH);
 		frame.add(scrollPane, BorderLayout.CENTER);
 		frame.add(aboutButton, BorderLayout.SOUTH);
-
-		aboutButton.addActionListener(new ActionListener() {
-			@Override
-			public void actionPerformed(ActionEvent e) {
-				About.aboutButtonPressed();
-			}
-		});
 
 		frame.setBounds(20, 20, 600, 400);
 		frame.setVisible(true);
