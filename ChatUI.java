@@ -36,7 +36,9 @@ public class ChatUI {
 				aboutButton.addActionListener(new ActionListener() {
 					@Override
 					public void actionPerformed(ActionEvent e) {
-						About.aboutButtonPressed();
+						 appendText(about.aboutButtonPressed());
+						// about.aboutButtonPressed();
+						// printLineMethod(about.aboutButtonPressed); //Denna måste ha en writer!
 					}
 				});
 
