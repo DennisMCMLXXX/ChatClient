@@ -1,9 +1,16 @@
-import javax.swing.*;
-import java.awt.*;
+import java.awt.BorderLayout;
+import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.IOException;
 import java.io.Writer;
+
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JScrollPane;
+import javax.swing.JTextArea;
+import javax.swing.JTextField;
+import javax.swing.SwingUtilities;
 
 public class ChatUI {
 
@@ -14,6 +21,12 @@ public class ChatUI {
 	private JTextArea chatText;
 	private JTextField entryText;
 	private JButton aboutButton;
+
+	// Variables for window size and placement
+	private int width = 600;
+	private int height = 400;
+	private int padding = 20;
+	private static int counter = 0;
 
 	public ChatUI(String title, Writer output) {
 
@@ -99,7 +112,9 @@ public class ChatUI {
 		frame.add(scrollPane, BorderLayout.CENTER);
 		frame.add(aboutButton, BorderLayout.SOUTH);
 
-		frame.setBounds(20, 20, 600, 400);
+		frame.setBounds(padding + (width * counter), padding, width, height);
 		frame.setVisible(true);
+
+		counter++;
 	}
 }

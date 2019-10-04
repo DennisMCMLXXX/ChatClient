@@ -13,7 +13,7 @@ public class chatTestIt {
 		while ((line = keyboard.readLine()) != null) {
 			theUI.appendText(line);
 		}
-		
+
 	}
 
 }

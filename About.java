@@ -1,10 +1,8 @@
-import com.fasterxml.jackson.databind.JsonMappingException;
-import com.fasterxml.jackson.databind.ObjectMapper;
-
 import java.io.File;
 import java.io.IOException;
-import java.io.StringWriter;
-import java.io.Writer;
+
+import com.fasterxml.jackson.databind.JsonMappingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
 
 public class About {
 	static About about;
@@ -26,8 +24,8 @@ public class About {
 		try {
 			about = mapper.readValue(new File("src/Authors.json"), About.class);
 		//	System.out.println(about.getMadeBy());
-			
-		
+
+
 		} catch (JsonMappingException e) {
 			e.printStackTrace();
 		} catch (IOException e) {
