@@ -4,10 +4,11 @@ Nicklas Holmberg, Dennis Larsson, Anders Nilsson
 
 Sammanfattnig:
 
-Vi har gjort en enkel nätverkschatt via sockets och går på localhost.
+Vi har gjort en enkel nätverkschatt via sockets och går på localhost. För att köra detta program behövs lite jar filer, vileket finns i lib katalogen.
  
 Som bonus skickar vi även med klassen chatTestIt som startar ett  chatfönster och skickar meddelanden direkt till console. Denna användes för att testa fram ChatUI klassen. Denna klass har en egen main.
 
+Mycket nöje! Det bästa med denna chat är att man får precis de svar man vill ha från den andra parten.
 
 Chat:
 
