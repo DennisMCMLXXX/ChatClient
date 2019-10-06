@@ -22,7 +22,6 @@ public class ChatUI {
 	private JTextField entryText;
 	private JButton aboutButton;
 
-	// Variables for window size and placement
 	private int width = 600;
 	private int height = 400;
 	private int padding = 20;
@@ -43,22 +42,17 @@ public class ChatUI {
 					public void actionPerformed(ActionEvent ae) {
 						printLineMethod(output);
 					}
-
 				});
 
 				aboutButton.addActionListener(new ActionListener() {
+
 					@Override
 					public void actionPerformed(ActionEvent e) {
-						 appendTextCLEAN(about.aboutButtonPressed());
-						// about.aboutButtonPressed();
-						// printLineMethod(about.aboutButtonPressed); //Denna måste ha en writer!
+						appendTextCLEAN(about.aboutButtonPressed());
 					}
 				});
-
 			}
-
 		});
-
 	}
 
 	public void appendText(String message) {
@@ -69,9 +63,9 @@ public class ChatUI {
 				chatText.setFont(new Font("Dialog", Font.BOLD, 12));
 				chatText.append("THEY  :  " + message + "\n");
 			}
-
 		});
 	}
+
 	public void appendTextCLEAN(String message) {
 		SwingUtilities.invokeLater(new Runnable() {
 
@@ -80,7 +74,6 @@ public class ChatUI {
 				chatText.setFont(new Font("Dialog", Font.BOLD, 12));
 				chatText.append(message + "\n");
 			}
-
 		});
 	}
 

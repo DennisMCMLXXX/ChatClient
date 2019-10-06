@@ -23,7 +23,6 @@ public class ChatClient extends Thread {
 			theUI.appendText("Connection lost");
 			socket.close();
 		} catch (IOException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 	}

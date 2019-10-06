@@ -8,5 +8,4 @@ public class Main {
 		serverThread.start();
 		clientThread.start();
 	}
-
 }
